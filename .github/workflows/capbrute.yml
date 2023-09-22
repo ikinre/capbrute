@@ -1,0 +1,28 @@
+name: capbuilder
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+       - name: Checkout
+         uses: actions/checkout@master
+
+       - name: settings env
+         run: |
+              sudo mkdir /opt/brute
+              sudo mv * /opt/brute
+
+       - name: update pkg and make aircrack
+         run: |
+              sudo apt update -y
+              sudo apt install git aircrack-ng -y
+
+       - name: Run wordlist maker
+         run: |
+              cd /opt/brute
+              sudo python3 hy.py
+
+       - name: start cracking
+         run: |
+              sudo aircrack-ng -w pass.txt mp.cap
