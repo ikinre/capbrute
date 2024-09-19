@@ -5,7 +5,7 @@ def checkwordlist():
     if os.path.exists('wordlist.txt'):
         wordlist = 1
 def count_numbers():
-    if wordlist is 0:
+    if wordlist == 0:
         # Open the file in write mode
         with open("wordlist.txt", "w") as file:
             # Iterate through numbers from 0 to 99999999
