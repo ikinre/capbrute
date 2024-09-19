@@ -1,11 +1,9 @@
 import os
 
-global wordlist
-def checkwordlist():
-    if os.path.exists('wordlist.txt'):
-        wordlist = 1
 def count_numbers():
-    if wordlist == 0:
+    if os.path.exists('wordlist.txt'):
+        print("exists")
+    else:
         # Open the file in write mode
         with open("wordlist.txt", "w") as file:
             # Iterate through numbers from 0 to 99999999
@@ -14,8 +12,5 @@ def count_numbers():
                 formatted_number = str(number).zfill(8)
                 # Write the formatted number to the file
                 file.write(formatted_number + "\n")
-    else:
-        print("wordlist already exist")
-checkwordlist()
 # Call the function to count and save the numbers
 count_numbers()
