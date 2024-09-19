@@ -2,7 +2,7 @@ import os
 
 wordlist = "no"
 def checkwordlist():
-    if os.path.exists('wordlist.txt')
+    if os.path.exists('wordlist.txt'):
         wordlist = "yes"
     else:
         wordlist = "no"
