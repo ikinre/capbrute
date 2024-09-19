@@ -1,7 +1,7 @@
 import os
 
 def count_numbers():
-    if os.path.exists('wordlist.txt'):
+    if os.path.exists('/root/wordlist.txt'):
         print("exists")
     else:
         # Open the file in write mode
