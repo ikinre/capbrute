@@ -1,6 +1,6 @@
 import os
 
-wordlist = 0
+global wordlist
 def checkwordlist():
     if os.path.exists('wordlist.txt'):
         wordlist = 1
